@@ -9,3 +9,4 @@ import Polynomial
 a = int(input())
 b = int(input())
 print(Integer.Test.ssum(a, b))
+print("bruh")
