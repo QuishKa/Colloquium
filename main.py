@@ -1,5 +1,5 @@
 # Main code and connection with JS GUI goes here
-# Use your functions as Integer.Test.ssum(a, b)
+# Example of using functions: Integer.Test.ssum(a, b)
 import Natural
 import Integer
 import Rational
