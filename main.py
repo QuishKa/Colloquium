@@ -7,5 +7,5 @@ import Polynomial
 
 
 # Main code and all the tests go here
-for i in range(100):
-    Integer.get_int()
+for i in range(10):
+    print(Integer.Test.ssum(i, 2))
