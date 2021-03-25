@@ -5,3 +5,4 @@ def MUL_Nk_N(num, k):
         for i in range(k):
             num[1].append(0)
     return num
+pass
