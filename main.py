@@ -8,8 +8,11 @@ import random
 
 
 # Main code and all the tests go here
-def get_int_num():
-    num = str(random.randint(10 ** 49, 99 ** 50))
+def get_int():
+    if random.randint(0, 100) < 10:
+        num = str(random.randint(0, 2))
+    else:
+        num = str(random.randint(0, 99 ** random.randint(1, 5000)))
     count = 0
     length = 1
     int_array = [length, []]
@@ -26,4 +29,4 @@ def get_int_num():
 
 
 for i in range(100):
-    get_int_num()
+    get_int()
