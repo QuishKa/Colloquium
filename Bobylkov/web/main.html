@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Кодовый замок</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<script type="text/javascript" src="/eel.js"></script>
+	<script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<main class="main">
+		<h1 class="main__header">Кодовый замок</h1>
+		<div class="main__lock lock">
+			<input type="text" class="lock__red" id="input-red" size="1">
+			<input type="text" class="lock__green" id="input-green" size="1">
+			<input type="text" class="lock__blue" id="input-blue" size="1">
+			<button class="lock__try">Открыть</button>
+		</div>
+		<div class="main__number">СЮДА НАДО ВСТАВИТЬ ЧИСЛО</div>
+		<button class="main__rules-button rules-button__active">Правила игры</button>
+		<section class="main__rules rules">
+			<p style="font-size: 16pt;" align="justify" class="rules__text">
+				Перед Вами кодовый замок с паролем и число-подсказка. Ваша задача с помощью подсказки найти пароль и открыть замок. В поисках Вам помогут рисунки-инструкции ниже. Для переключения между рисунками можно нажимать на цветные вкладки над ними. Если понимание рисунка становится слишком сложным, нажмите на кнопку "Подсказка" и получите расшифровку инструкции. Получив пароль, впишите его в соответствующие поля кодового замка и нажмите "Открыть". В случае неверного ответа, кнопка "Открыть" окрасится в красный цвет. Если Вы хотите перезапустить игру, нажмите на кнопку "Ресет".
+			</p>
+		</section>
+		<section class="main__hints hints">
+			<div class="tabs">
+				<a href="#hint_red" class="tab red"></a>
+				<a href="#hint_green" class="tab green"></a>
+				<a href="#hint_blue" class="tab blue"></a>
+			</div>
+			<ul class="hints__list tabs-content">
+				<li class="hints__item red" id="hint_red">
+					<div class="hint__images">
+						<img class="hints__img" src="img/red1.jpg">
+						<img class="hints__img" src="img/red2.jpg">	
+					</div>
+					<div class="hints__help-body">
+						<button class="hints__help hints__help_active red">Подсказка</button>
+						<div style="font-size: 16pt;" align="justify" class="hints__hint">
+							Переведите число-подсказку из 10-чной в систему с основанием, равным количеству цифр в подсказке, затем сосчитайте нули в конце записи.
+						</div>
+					</div>
+				</li>
+				<li class="hints__item green" id="hint_green">
+					<div class="hint__images">
+						<img class="hints__img" src="img/green1.jpg">
+					</div>
+					<div class="hints__help-body">
+						<button class="hints__help hints__help_active green">Подсказка</button>
+						<div style="font-size: 16pt;" align="justify" class="hints__hint">
+							День зеленого цвета = 23.01;
+		          Переведите 23.(01) в систему счисления, равную зеленому числу в подсказке, и сосчитайте cумму 4-х первых цифр дробной части числа.
+						</div>
+					</div>
+				</li>
+				<li class="hints__item blue" id="hint_blue">
+					<div class="hint__images">
+						<img class="hints__img" src="img/blue1.jpg">
+						<img class="hints__img" src="img/blue2.jpg">	
+					</div>
+					<div class="hints__help-body">
+						<button class="hints__help hints__help_active blue">Подсказка</button>
+						<div style="font-size: 16pt;" align="justify" class="hints__hint">
+							Сосчитайте количество единиц в Фибоначчиевой записи перевернутого числа.
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="main__control">
+			<button class="main__reset">РЕСЕТ</button>
+			<button class="main__authors">Авторы</button>
+		</section>
+		<div class="popup-container">
+			<div class="popup__body authors">
+				<h4 class="authors__header">Авторы</h4>
+				<ul class="authors__list">
+					<li class="authors__author"><span>GUI, Правила:</span> Тимофей Бобыльков</li>
+					<li class="authors__author"><span>Программирование, Алгоритмизация:</span> Тимофей Баев</li>
+					<li class="authors__author"><span>Программирование, Тестинг:</span> Вячеслав Доронин</li>
+					<li class="authors__author"><span>Наставник:</span> Сергей Тодиков</li>
+					<li class="authors__group">0308, ЛЭТИ, 2020</li>
+				</ul>
+			</div>
+			<div class="popup__body win">
+				ПОБЕДА!
+				<button class="main__reset">РЕСЕТ</button>
+				<button class="main__authors popuped">Авторы</button>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
