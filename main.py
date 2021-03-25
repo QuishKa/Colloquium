@@ -35,3 +35,4 @@ while num != 'exit':
     int_array.clear()
     dec_array.clear()
     count = 0
+
