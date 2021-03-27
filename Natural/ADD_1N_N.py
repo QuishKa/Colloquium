@@ -9,3 +9,5 @@ def ADD_1N_N(int_arr):
     int_arr[1][int_arr[0] - k] += 1
 
     return int_arr
+
+#Ельцов В.
