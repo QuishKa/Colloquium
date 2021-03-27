@@ -16,6 +16,3 @@ def COM_NN_D(num1, num2):
             elif num2[1][i] > num1[1][i]:
                 return 1
     return 0
-    
-    
-print (COM_NN_D([3, [1, 2, 3]], [3, [1, 2, 3]]))
