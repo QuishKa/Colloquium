@@ -5,6 +5,10 @@ from MUL_ND_N import MUL_ND_N
 
 
 def DIV_NN_Dk(a, b):
+    if COM_NN_D(a, [1, [0]]) == 0:
+        return [1, [0]]
+    if COM_NN_D(b, [1, [0]]) == 0:
+        return [1, [0]]
     com = COM_NN_D(a, b)
     if com == 0:
         return [1, 0]
@@ -27,4 +31,4 @@ def DIV_NN_Dk(a, b):
                 y = (x + y) // 2
             else:
                 x = (x + y) // 2
-    return [y, a[0] - subnum[0]]
+    return MUL_Nk_N([1, [y]], a[0] - subnum[0])
