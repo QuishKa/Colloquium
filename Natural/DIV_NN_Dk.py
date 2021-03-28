@@ -11,7 +11,7 @@ def DIV_NN_Dk(a, b):
         return [1, [0]]
     com = COM_NN_D(a, b)
     if com == 0:
-        return [1, 0]
+        return [1, [1]]
     elif com == 1:
         tmp = a
         a = b
