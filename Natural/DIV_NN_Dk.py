@@ -22,14 +22,16 @@ def DIV_NN_Dk(ax, bx):
         subnum = [b[0] + 1, a[1][:b[0] + 1]]
     x = 1
     y = 9
-    while x != y:
+    while x < y:
         mul = MUL_ND_N(b, (x + y) // 2)
         com = COM_NN_D(mul, subnum)
         if com == 2:
             y = (x + y) // 2 - 1
-        if com == 1 or com == 0:
-            if x == (x + y) // 2:
-                y = (x + y) // 2
-            else:
-                x = (x + y) // 2
+        elif com == 1 or com == 0:
+            x = (x + y) // 2 + 1
+    else:
+        mul = MUL_ND_N(b, y)
+        com = COM_NN_D(mul, subnum)
+        if com == 2:
+            y -= 1
     return [y, a[0] - subnum[0]]
