@@ -8,7 +8,9 @@ from COM_NN_D import COM_NN_D
 from MOD_NN_N import MOD_NN_N
 from MUL_ND_N import MUL_ND_N
 from MUL_Nk_N import MUL_Nk_N
+from MUL_NN_N import MUL_NN_N
 from NZER_N_B import NZER_N_B
 from SUB_NDN_N import SUB_NDN_N
 from SUB_NN_N import SUB_NN_N
 from DIV_NN_Dk import DIV_NN_Dk
+from DIV_NN_N import DIV_NN_N
