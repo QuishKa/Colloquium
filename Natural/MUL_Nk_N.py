@@ -5,15 +5,16 @@ def MUL_Nk_N(num, k):
     If the number equals to zero, returns the number without changing it.
     Parameters
     ----------
-    num - number to nultiply.
+    num - number to multiply.
 
     k - the power of 10 to multiply on.
     '''
-    if(num[0]>1 or (num[0]==1 and num[1][0]>0)):
-        num[0]+=k
+    new_num = [num[0], num[1][:]]
+    if(new_num[0]>1 or (new_num[0]==1 and new_num[1][0]>0)):
+        new_num[0]+=k
         for i in range(k):
-            num[1].append(0)
-    return num
+            new_num[1].append(0)
+    return new_num
 
 '''
 TESTS MUL_Nk_N(num, k):
@@ -26,5 +27,10 @@ print(MUL_Nk_N(n1, 1000))
 print(MUL_Nk_N(n2, 13))
 print(MUL_Nk_N(n3, 45641))
 print(MUL_Nk_N(n4, 114))
+print(n1)
+print(n2)
+print(n3)
+print(n4)
 '''
+
 
