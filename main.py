@@ -7,5 +7,4 @@ import Polynomial
 
 
 # Main code and all the tests go here
-for i in range(10):
-    print(Integer.Test.ssum(i, 2))
+print(Natural.DIV_NN_Dk(Integer.get_int(5555), Integer.get_int(5)))
