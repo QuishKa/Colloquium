@@ -8,6 +8,10 @@ from MUL_Nk_N import MUL_Nk_N
 def DIV_NN_N(ax, bx):
     a = [ax[0], list(ax[1])]
     b = [bx[0], list(bx[1])]
+    if COM_NN_D(a, [1, [0]]) == 0:
+        return [1, [0]]
+    if COM_NN_D(b, [1, [0]]) == 0:
+        return [1, [0]]
     com = COM_NN_D(a, b)
     if com == 1:
         tmp = a

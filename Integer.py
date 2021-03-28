@@ -6,14 +6,13 @@ sys.path.append('Integer\\')
 import random
 
 
-def get_int(exactnum=-1, maxlen=-1, minlen=1):
+def get_int(exactnum=-1, minlen=1, maxlen=10000):
     if exactnum == -1:
         if random.randint(0, 100) < 20:
             num = str(random.randint(0, 2))
         else:
-            if maxlen == -1:
-                maxlen = random.randint(1, 10000)
-            num = str(random.randint(10 ** (minlen - 1), 10 ** (maxlen - 1) * 9))
+            leng = random.randint(minlen, maxlen)
+            num = str(random.randint(10 ** (minlen - 1), 10 ** (leng - 1) * 9))
     else:
         num = str(exactnum)
     count = 0
