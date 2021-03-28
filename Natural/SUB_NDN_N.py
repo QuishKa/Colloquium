@@ -12,10 +12,12 @@ from COM_NN_D import COM_NN_D
 
 
 def SUB_NDN_N(decreasing, digit, subtraction):
-    sub = MUL_ND_N(subtraction, digit)
-    condition = COM_NN_D(decreasing, sub)
+    dec = [decreasing[0], list(decreasing[1])]
+    sub1 = [subtraction[0], list(subtraction[1])]
+    sub = MUL_ND_N(sub1, digit)
+    condition = COM_NN_D(dec, sub)
     if condition == 2:
-        return SUB_NN_N(decreasing, sub)
+        return SUB_NN_N(dec, sub)
     elif condition == 0:
         return [1, [0]]
     else:

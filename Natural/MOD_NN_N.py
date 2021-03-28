@@ -11,4 +11,5 @@ from SUB_NDN_N import SUB_NDN_N
 
 def MOD_NN_N(dividend, divisor):
     quotient = DIV_NN_N(dividend, divisor)
-    return SUB_NDN_N(dividend, quotient, divisor)
+    print(quotient[1][0])
+    return SUB_NDN_N(dividend, quotient[1][0], divisor)
