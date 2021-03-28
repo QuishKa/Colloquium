@@ -14,11 +14,13 @@ def ADD_NN_N(arr1, arr2):
         if shift != 0:
             if arr1[0] == arr2[0]:
                 arr2[1].insert(arr1[0], shift)
+                arr2[0] += 1
             else:
                 arr2[1][arr1[0]] += shift
                 if arr2[1][arr1[0]] == 10:
                     arr2[1][arr1[0]] = 0
                     arr2[1].insert(arr1[0]+1, shift)
+                    arr2[0] += 1
         arr1[1].reverse()
         arr2[1].reverse()
         return arr2
@@ -30,13 +32,14 @@ def ADD_NN_N(arr1, arr2):
         if shift != 0:
             if arr1[0] == arr2[0]:
                 arr1[1].insert(arr2[0], shift)
+                arr1[0] += 1
             else:
                 arr1[1][arr2[0]] += shift
                 if arr1[1][arr2[0]] == 10:
                     arr1[1][arr2[0]] = 0
                     arr1[1].insert(arr2[0]+1, shift)
+                    arr1[0] += 1
         arr1[1].reverse()
         arr2[1].reverse()
         return arr1
-
 #Ельцов В.
