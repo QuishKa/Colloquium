@@ -1,5 +1,4 @@
 # Author: Doronin V.V. 0308
-from MUL_Nk_N import MUL_Nk_N
 from COM_NN_D import COM_NN_D
 from MUL_ND_N import MUL_ND_N
 
@@ -31,4 +30,4 @@ def DIV_NN_Dk(a, b):
                 y = (x + y) // 2
             else:
                 x = (x + y) // 2
-    return MUL_Nk_N([1, [y]], a[0] - subnum[0])
+    return [y, a[0] - subnum[0]]
