@@ -6,10 +6,13 @@
 
 
 from DIV_NN_N import DIV_NN_N
-from SUB_NDN_N import SUB_NDN_N
+from SUB_NN_N import SUB_NN_N
+from COM_NN_D import COM_NN_D
 
 
 def MOD_NN_N(dividend, divisor):
     quotient = DIV_NN_N(dividend, divisor)
-    #print(quotient[1][0])
-    return SUB_NDN_N(dividend, quotient[1][0], divisor)
+    result = dividend
+    while COM_NN_D(result, quotient) != 1:
+        result = SUB_NN_N(result, quotient)
+    return result
