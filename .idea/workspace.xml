@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0839f95b-81fc-42da-984e-bca646449961" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Natural/MOD_NN_N.py" beforeDir="false" afterPath="$PROJECT_DIR$/Natural/MOD_NN_N.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
