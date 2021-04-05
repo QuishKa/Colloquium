@@ -6,8 +6,8 @@ from MUL_Nk_N import MUL_Nk_N
 
 
 def DIV_NN_N(ax, bx):
-    a = [ax[0], list(ax[1])]
-    b = [bx[0], list(bx[1])]
+    a = [ax[0], ax[1].copy()]
+    b = [bx[0], bx[1].copy()]
     if COM_NN_D(a, [1, [0]]) == 0:
         return [1, [0]]
     if COM_NN_D(b, [1, [0]]) == 0:

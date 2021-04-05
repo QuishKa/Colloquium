@@ -15,11 +15,11 @@ def MUL_NN_N(arr1, arr2):
     com = COM_NN_D(arr1, arr2)
 
     if com == 2:
-        bigger = [arr1[0], list(arr1[1])]
-        smaller = [arr2[0], list(arr2[1])]
+        bigger = [arr1[0], arr1[1].copy()]
+        smaller = [arr2[0], arr2[1].copy()]
     else:
-        smaller = [arr1[0], list(arr1[1])]
-        bigger = [arr2[0], list(arr2[1])]
+        smaller = [arr1[0], arr1[1].copy()]
+        bigger = [arr2[0], arr2[1].copy()]
 
     res = [1, [0]]
 
