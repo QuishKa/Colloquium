@@ -15,11 +15,11 @@ def SUB_NN_N(arr1, arr2):
     if res == 0:
         return [1, [0]]
     elif res == 2:
-        bigger = [arr1[0], list(arr1[1])]
-        smaller = [arr2[0], list(arr2[1])]
+        bigger = [arr1[0], arr1[1].copy()]
+        smaller = [arr2[0], arr2[1].copy()]
     else:
-        smaller = [arr1[0], list(arr1[1])]
-        bigger = [arr2[0], list(arr2[1])]
+        smaller = [arr1[0], arr1[1].copy()]
+        bigger = [arr2[0], arr2[1].copy()]
 
     diff = bigger[0] - smaller[0]
 

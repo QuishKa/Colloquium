@@ -1,16 +1,10 @@
-# Author: Radabolsky V.S. 0308
-# dividend - делимое
-# divisor - делитель
-# quotient - частное
-# Функция возвращает остаток от деления dividend на divisor
-
 from DIV_NN_Dk import DIV_NN_Dk
 from COM_NN_D import COM_NN_D
 from SUB_NDN_N import SUB_NDN_N
 from MUL_Nk_N import MUL_Nk_N
 
 
-def MOD_NN_N(ax, bx):
+def MOD_NN_N_2(ax, bx):
     a = [ax[0], ax[1].copy()]
     b = [bx[0], bx[1].copy()]
     if COM_NN_D(a, [1, [0]]) == 0:

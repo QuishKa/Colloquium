@@ -12,8 +12,8 @@ from COM_NN_D import COM_NN_D
 
 
 def SUB_NDN_N(decreasing, digit, subtraction):
-    dec = [decreasing[0], list(decreasing[1])]
-    sub1 = [subtraction[0], list(subtraction[1])]
+    dec = [decreasing[0], decreasing[1].copy()]
+    sub1 = [subtraction[0], subtraction[1].copy()]
     sub = MUL_ND_N(sub1, digit)
     condition = COM_NN_D(dec, sub)
     if condition == 2:
