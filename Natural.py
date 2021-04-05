@@ -19,7 +19,7 @@ from DIV_NN_N import DIV_NN_N
 
 def get_int(exactnum=-1, minlen=1, maxlen=10000):
     if exactnum == -1:
-        if random.randint(0, 100) < 20:
+        if random.randint(0, 100) < 15:
             num = str(random.randint(0, 2))
         else:
             leng = random.randint(minlen, maxlen)
