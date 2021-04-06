@@ -5,7 +5,6 @@ import random
 sys.path.append('Integer\\')
 from ABS_Z_N import ABS_Z_N
 from ADD_ZZ_Z import ADD_ZZ_Z
-from COM_NN_D import COM_NN_D
 from DIV_ZZ_Z import DIV_ZZ_Z
 from MUL_ZM_Z import MUL_ZM_Z
 from POZ_Z_D import POZ_Z_D

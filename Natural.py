@@ -15,6 +15,9 @@ from SUB_NDN_N import SUB_NDN_N
 from SUB_NN_N import SUB_NN_N
 from DIV_NN_Dk import DIV_NN_Dk
 from DIV_NN_N import DIV_NN_N
+from new_ADD_NN_N import new_ADD_NN_N
+from new_MUL_NN_N import new_MUL_NN_N
+from new_MUL_ND_N import new_MUL_ND_N
 
 
 def get_int(exactnum=-1, minlen=1, maxlen=10000):
