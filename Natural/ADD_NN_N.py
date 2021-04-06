@@ -2,6 +2,8 @@ import COM_NN_D
 
 
 def ADD_NN_N(arr1, arr2):
+    arr1 = [arr1[0], arr1[1].copy()]
+    arr2 = [arr2[0], arr2[1].copy()]
     big_num = COM_NN_D.COM_NN_D(arr1, arr2)
     arr1[1].reverse()
     arr2[1].reverse()
