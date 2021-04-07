@@ -4,10 +4,10 @@
 # quotient - частное
 # Функция возвращает остаток от деления dividend на divisor
 
-from DIV_NN_Dk import DIV_NN_Dk
+from DIV_NN_N import DIV_NN_N
 from COM_NN_D import COM_NN_D
-from SUB_NDN_N import SUB_NDN_N
-from MUL_Nk_N import MUL_Nk_N
+from SUB_NN_N import SUB_NN_N
+from MUL_NN_N import MUL_NN_N
 
 
 def MOD_NN_N(ax, bx):
@@ -24,9 +24,6 @@ def MOD_NN_N(ax, bx):
         b = tmp
     if com == 0:
         return [1, [1]]
-    com = 2
-    while com == 2 or com == 0:
-        x = DIV_NN_Dk(a, b)
-        a = SUB_NDN_N(a, x[0], MUL_Nk_N(b, x[1]))
-        com = COM_NN_D(a, b)
+    x = DIV_NN_N(a, b)
+    a = SUB_NN_N(a, MUL_NN_N(b, x))
     return a

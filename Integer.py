@@ -2,7 +2,7 @@
 # It will add all the functions from that file and they can be used both here and in main
 import sys
 import random
-sys.path.append('Integer\\')
+sys.path.append('Integer')
 from ABS_Z_N import ABS_Z_N
 from ADD_ZZ_Z import ADD_ZZ_Z
 from DIV_ZZ_Z import DIV_ZZ_Z
