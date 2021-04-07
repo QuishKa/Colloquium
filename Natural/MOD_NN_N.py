@@ -23,7 +23,7 @@ def MOD_NN_N(ax, bx):
         a = b
         b = tmp
     if com == 0:
-        return [1, [1]]
+        return [1, [0]]
     x = DIV_NN_N(a, b)
     a = SUB_NN_N(a, MUL_NN_N(b, x))
     return a
