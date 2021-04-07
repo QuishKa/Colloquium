@@ -21,4 +21,5 @@ def DIV_ZZ_Z(int1, int2):
         res[0] += 1
         return res
     else:
+        res[0] += 1
         return TRANS_N_Z(res)
