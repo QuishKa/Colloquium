@@ -4,3 +4,4 @@ import sys
 sys.path.append('Rational')
 from ADD_QQ_Q import ADD_QQ_Q
 from SUB_QQ_Q import SUB_QQ_Q
+from RED_Q_Q import RED_Q_Q
