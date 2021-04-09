@@ -1,10 +1,5 @@
 #Author: Radabolsky Vladislav 0308
 
-import sys
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium')
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium\Integer')
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium\Natural')
-
 from Natural import new_MUL_NN_N
 from RED_Q_Q import RED_Q_Q
 
