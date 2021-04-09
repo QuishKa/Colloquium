@@ -2,7 +2,7 @@
 # It will add all the functions from that file and they can be used both here and in main
 import sys
 import random
-sys.path.append('Integer\\')
+sys.path.append('Integer')
 from ABS_Z_N import ABS_Z_N
 from ADD_ZZ_Z import ADD_ZZ_Z
 from DIV_ZZ_Z import DIV_ZZ_Z
@@ -12,6 +12,7 @@ from SUB_ZZ_Z import SUB_ZZ_Z
 from TRANS_N_Z import TRANS_N_Z
 from TRANS_Z_N import TRANS_Z_N
 from MOD_ZZ_Z import MOD_ZZ_Z
+from MUL_ZZ_Z import MUL_ZZ_Z
 
 
 def get_int(minus=0, exactnum=-1, minlen=1, maxlen=10000):

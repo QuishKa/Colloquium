@@ -39,7 +39,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+<<<<<<< Updated upstream
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Baev/TRANS_Q_Z.py" />
+>>>>>>> Stashed changes
+>>>>>>> a48a9932e2f34582e80abf45ea49cf7e1ce0688e
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -175,12 +183,21 @@
       <method v="2" />
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="Python.main" />
       <item itemvalue="Python.Natural" />
       <item itemvalue="Python.MUL_QQ_Q" />
       <item itemvalue="Python.NZER_N_B" />
       <item itemvalue="Python.SUB_QQ_Q" />
       <item itemvalue="Python.DIV_QQ_Q" />
+=======
+      <item itemvalue="Python.DIV_NN_N" />
+      <item itemvalue="Python.MOD_NN_N" />
+      <item itemvalue="Python.MUL_ND_N" />
+      <item itemvalue="Python.TRANS_N_Z" />
+      <item itemvalue="Python.TRANS_Z_N" />
+      <item itemvalue="Python.main" />
+>>>>>>> a48a9932e2f34582e80abf45ea49cf7e1ce0688e
     </list>
     <recent_temporary>
       <list>
@@ -208,6 +225,8 @@
       <workItem from="1617635082117" duration="10198000" />
       <workItem from="1617646008505" duration="2252000" />
       <workItem from="1617672844361" duration="3020000" />
+      <workItem from="1617787349444" duration="579000" />
+      <workItem from="1617787938881" duration="1672000" />
     </task>
     <servers />
   </component>
@@ -226,4 +245,20 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonProject$MOD_NN_N.coverage" NAME="MOD_NN_N Coverage Results" MODIFIED="1617581408956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Natural" />
+    <SUITE FILE_PATH="coverage/pythonProject$main.coverage" NAME="main Coverage Results" MODIFIED="1617675835027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ADD_ZZ_Z_py$main.coverage" NAME="main Coverage Results" MODIFIED="1617789575958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+  <component name="WindowStateProjectService">
+    <state x="580" y="192" key="FileChooserDialogImpl" timestamp="1617738237467">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="580" y="192" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1617738237467" />
+>>>>>>> Stashed changes
+  </component>
+>>>>>>> a48a9932e2f34582e80abf45ea49cf7e1ce0688e
 </project>

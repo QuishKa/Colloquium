@@ -2,7 +2,7 @@
 # It will add all the functions from that file and they can be used both here and in main
 import sys
 import random
-sys.path.append('Natural\\')
+sys.path.append('Natural')
 from ADD_1N_N import ADD_1N_N
 from ADD_NN_N import ADD_NN_N
 from COM_NN_D import COM_NN_D
@@ -15,6 +15,8 @@ from SUB_NDN_N import SUB_NDN_N
 from SUB_NN_N import SUB_NN_N
 from DIV_NN_Dk import DIV_NN_Dk
 from DIV_NN_N import DIV_NN_N
+from LCM_NN_N import LCM_NN_N
+from GCF_NN_N import GCF_NN_N
 from new_ADD_NN_N import new_ADD_NN_N
 from new_MUL_NN_N import new_MUL_NN_N
 from new_MUL_ND_N import new_MUL_ND_N
