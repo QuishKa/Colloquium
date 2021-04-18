@@ -8,9 +8,9 @@ def ADD_NN_N(arr1, arr2):
     shift = 0
     s = 0
     if big_num == 2:
-        tmp = arr1
-        arr1 = arr2
-        arr2 = tmp
+        tmp = arr1[:]
+        arr1 = arr2[:]
+        arr2 = tmp[:]
     for i in range(arr1[0]):
         sum = arr1[1][i] + arr2[1][i] + shift
         arr2[1][i] = sum % 10
