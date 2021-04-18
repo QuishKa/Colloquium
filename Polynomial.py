@@ -4,3 +4,4 @@ import sys
 sys.path.append('Polynomial')
 from ADD_PP_P import ADD_PP_P
 from SUB_PP_P import SUB_PP_P
+from DER_P_P import DER_P_P
