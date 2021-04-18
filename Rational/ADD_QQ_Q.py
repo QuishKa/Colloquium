@@ -2,6 +2,7 @@ from Natural import LCM_NN_N
 from Integer import MUL_ZZ_Z
 from Integer import ADD_ZZ_Z
 from Integer import DIV_ZZ_Z
+from RED_Q_Q import RED_Q_Q
 
 
 def ADD_QQ_Q(arr1, arr2):
@@ -11,6 +12,7 @@ def ADD_QQ_Q(arr1, arr2):
     ar1_ch = MUL_ZZ_Z(arr1[0], nok1)
     ar2_ch = MUL_ZZ_Z(arr2[0], nok2)
     res = ADD_ZZ_Z(ar1_ch, ar2_ch)
+    res = [[res[0], res[1], list(res[2])], [nok[0], list(nok[1])]]
 
-    return [[res[0], res[1], list(res[2])], [nok[0], list(nok[1])]]
+    return RED_Q_Q(res)
 #Ельцов В.
