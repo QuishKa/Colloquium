@@ -1,10 +1,5 @@
 #Author: Radabolsky Vladislav 0308
 
-import sys
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium')
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium\Integer')
-sys.path.append(r'E:\ETU\Дискретка\Коллоквиум\Colloquium\Natural')
-
 from Natural import new_MUL_NN_N
 from RED_Q_Q import RED_Q_Q
 
@@ -27,7 +22,6 @@ def MUL_ZZ_Z(arr1, arr2):
 def MUL_QQ_Q(first, second):
     result = list([MUL_ZZ_Z(first[0], second[0]), new_MUL_NN_N(first[1], second[1])])
     return RED_Q_Q(result)
-
 
 
 
