@@ -25,4 +25,12 @@ def MUL_PP_P(p1, p2):
         on_xk = MUL_Pxk_P(on_q, i)
         res = ADD_PP_P(res, on_xk)
 
+    z = [0, 1, [0]]
+    z1 = [1, 1, [0]]
+    n = [1, [1]]
+    q = [z, n]
+    q1 = [z1, n]
+    if res[1][res[0] - 1] == q or res[1][res[0] - 1] == q1:
+        res = [0, [q]]
+
     return res
