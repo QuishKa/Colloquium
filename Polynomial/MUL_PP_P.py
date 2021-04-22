@@ -30,7 +30,7 @@ def MUL_PP_P(p1, p2):
     n = [1, [1]]
     q = [z, n]
     q1 = [z1, n]
-    if res[1][res[0] - 1] == q or res[1][res[0] - 1] == q1:
+    if res[1][res[0]] == q or res[1][res[0]] == q1:
         res = [0, [q]]
 
     return res
