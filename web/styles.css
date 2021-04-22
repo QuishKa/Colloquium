@@ -138,7 +138,7 @@ button:hover {
 }
 
 .num_res:before {
-	content: "Ответ:";
+	content: "Ответ: ";
 
 }
 
@@ -199,7 +199,7 @@ button:hover {
 }
 
 .rational_res::before {
-	content: "Ответ:";
+	content: "Ответ: ";
   position: absolute;
   left: -75px;
   top: 18%;
@@ -213,7 +213,7 @@ button:hover {
 }
 
 .polynom_res.num_res::before {
-	content: "Ответ:";
+	content: "Ответ: ";
   position: absolute;
   top: 0;
   word-break: keep-all;

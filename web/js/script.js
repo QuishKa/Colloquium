@@ -243,17 +243,93 @@ $(function(){
 		deletePower($(e.target)[0].classList[1]);
 	});
 
-	$('.tab:last').click();
+	$('.tab:first').click();
 
 	$('.popup-container').on('click', function(event){
 		if (event.target == this) {
 			authors();
 		}
 	});
-	console.log(getStringNat(getNatural('98765432')));
-	console.log(getStringInt(getInteger('-123')));
-	console.log(getRational('-12345', '123'));
-	document.getElementById('natural_res').innerHTML = '123';
 
+	/******** NATURAL ********/
+
+	$('#N-1').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_1(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-2').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_2(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-3').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_3(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-4').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_4(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-5').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_5(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-6').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_6(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	$('#N-7').on('click', function(){
+		var N1, N2;
+
+		N1 = getNatural($('#natural_1')[0].value);
+		N2 = getNatural($('#natural_2')[0].value);
+
+		eel.N_7(N1, N2)(function(ret){
+			document.getElementById('natural_res').innerHTML = getStringNat(ret);
+		});
+	});
+
+	/******** INTEGER ********/
 
 });
