@@ -34,40 +34,6 @@ $(function(){
 		}
 	}
 
-
-	function trying() {
-		let tryRed = document.getElementById('input-red').value,
-				tryGreen = document.getElementById('input-green').value,
-				tryBlue = document.getElementById('input-blue').value;
-				
-		eel.checker(tryRed, tryGreen, tryBlue)(function(ret){
-			console.log(ret == 1);
-			if (ret == 1) {
-				win();
-				$('.lock__try').css({'color': 'white', 'border-color': '-internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));'});
-			} else {
-				lose();
-			}
-		});
-	}
-
-
-	function init() {
-		let Arr, number, green;
-		Arr = eel.init()(function(ret){
-			console.log(ret);
-			let number = String(ret[0]),
-					green = ret[1];
-			let element = document.querySelector('.main__number');
-				num1 = number.slice(0, green);
-				num2 = number.slice(green + 1);
-				res = num1 + '<span>' + number[green] + '</span>' + num2;
-				element.innerHTML = res;
-		});
-		// Запрашиваем у Python число подсказку
-		// let green = getRandomInt(number.length); // Запрашиваем у Python случайное число
-	}
-
 	function getNatural(str) {
 		var res = [str.length, []];
 		if (isFinite(str)) {
@@ -93,10 +59,6 @@ $(function(){
 		}
 
 		return res;
-	}
-
-	function answer(id, str) {
-		document.getElementById(id).innerHTML = str;
 	}
 
 	function getStringNat(arr) {
@@ -130,6 +92,13 @@ $(function(){
 		res = [getStringInt(arr[0]), getStringNat(arr[1])];
 
 		return res;
+	}
+
+	function printRational(arr) {
+		var strs = getStringRational(arr);
+		var res = `<div class="res_rational-nom">${strs[0]}</div>
+						<div class="res_rational-denom">${strs[1]}</div>`;
+		$('.rational_res').html(res); 
 	}
 
 	function addPower(str) {
@@ -217,12 +186,7 @@ $(function(){
 		$('.polynom_res').html(res);
 
 	}
-
-	$("#P-1").on('click', function() {
-		printPolynome(getPolynome(1));
-		console.log(getPolynome(2));
-	})
-
+	
 	$('.tab').on('click', function(e){
 		e.preventDefault();
 
@@ -331,5 +295,205 @@ $(function(){
 	});
 
 	/******** INTEGER ********/
+
+	$('#I-1').on('click', function(){
+		var I1, I2;
+
+		I1 = getInteger($('#integer_1')[0].value);
+		I2 = getInteger($('#integer_2')[0].value);
+
+		eel.I_1(I1, I2)(function(ret){
+			document.getElementById('integer_res').innerHTML = getStringInt(ret);
+		});
+	});
+
+	$('#I-2').on('click', function(){
+		var I1, I2;
+
+		I1 = getInteger($('#integer_1')[0].value);
+		I2 = getInteger($('#integer_2')[0].value);
+
+		eel.I_2(I1, I2)(function(ret){
+			document.getElementById('integer_res').innerHTML = getStringInt(ret);
+		});
+	});
+
+	$('#I-3').on('click', function(){
+		var I1, I2;
+
+		I1 = getInteger($('#integer_1')[0].value);
+		I2 = getInteger($('#integer_2')[0].value);
+
+		eel.I_3(I1, I2)(function(ret){
+			document.getElementById('integer_res').innerHTML = getStringInt(ret);
+		});
+	});
+
+	$('#I-4').on('click', function(){
+		var I1, I2;
+
+		I1 = getInteger($('#integer_1')[0].value);
+		I2 = getInteger($('#integer_2')[0].value);
+
+		eel.I_4(I1, I2)(function(ret){
+			document.getElementById('integer_res').innerHTML = getStringInt(ret);
+		});
+	});
+
+	$('#I-5').on('click', function(){
+		var I1, I2;
+
+		I1 = getInteger($('#integer_1')[0].value);
+		I2 = getInteger($('#integer_2')[0].value);
+
+		eel.I_5(I1, I2)(function(ret){
+			document.getElementById('integer_res').innerHTML = getStringInt(ret);
+		});
+	});
+
+
+	/******** RATIONAL ********/
+
+	$('#Q-1').on('click', function(){
+		var Q1;
+
+		Q1 = getRational($('#rational-nom_1')[0].value, $('#rational-denom_1')[0].value);
+
+		eel.Q_1(Q1)(function(ret){
+			printRational(ret);
+		});
+	});
+
+	$('#Q-2').on('click', function(){
+		var Q1, Q2;
+
+		Q1 = getRational($('#rational-nom_1')[0].value, $('#rational-denom_1')[0].value);
+		Q2 = getRational($('#rational-nom_2')[0].value, $('#rational-denom_2')[0].value);
+
+		eel.Q_2(Q1, Q2)(function(ret){
+			printRational(ret);
+		});
+	});
+
+	$('#Q-3').on('click', function(){
+		var Q1, Q2;
+
+		Q1 = getRational($('#rational-nom_1')[0].value, $('#rational-denom_1')[0].value);
+		Q2 = getRational($('#rational-nom_2')[0].value, $('#rational-denom_2')[0].value);
+
+		eel.Q_3(Q1, Q2)(function(ret){
+			printRational(ret);
+		});
+	});
+
+	$('#Q-4').on('click', function(){
+		var Q1, Q2;
+
+		Q1 = getRational($('#rational-nom_1')[0].value, $('#rational-denom_1')[0].value);
+		Q2 = getRational($('#rational-nom_2')[0].value, $('#rational-denom_2')[0].value);
+
+		eel.Q_4(Q1, Q2)(function(ret){
+			printRational(ret);
+		});
+	});
+
+	$('#Q-5').on('click', function(){
+		var Q1, Q2;
+
+		Q1 = getRational($('#rational-nom_1')[0].value, $('#rational-denom_1')[0].value);
+		Q2 = getRational($('#rational-nom_2')[0].value, $('#rational-denom_2')[0].value);
+
+		eel.Q_5(Q1, Q2)(function(ret){
+			printRational(ret);
+		});
+	});
+
+	$('#P-1').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_5(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-2').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_2(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-3').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_3(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-4').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_4(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-5').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_5(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-6').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_6(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-7').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+
+		eel.P_7(P1)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
+	$('#P-8').on('click', function(){
+		var P1, P2;
+
+		P1 = getPolynome(1);
+		P2 = getPolynome(2);
+
+		eel.P_8(P1, P2)(function(ret){
+			printPolynome(ret);
+		});
+	});
+
 
 });
