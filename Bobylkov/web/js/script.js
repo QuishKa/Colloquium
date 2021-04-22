@@ -34,20 +34,6 @@ $(function(){
 		}
 	}
 
-	function win() {
-		if ($('body').hasClass('disable-scroll')) {
-			resurrectScroll();
-			$('.popup-container').fadeOut();
-			$('.win').fadeOut();
-			$('body').css('background', 'linear-gradient(90deg, rgba(255,166,0,.8) 0%, rgba(253,45,45,.8) 100%)');
-		} else {
-			killScroll();
-			$('.popup-container').fadeIn();
-			$('.win').fadeIn();
-			$('.win').css('display', 'flex');
-			$('body').css('background', 'orange');
-		}
-	}
 
 	function trying() {
 		let tryRed = document.getElementById('input-red').value,
@@ -65,9 +51,6 @@ $(function(){
 		});
 	}
 
-	function lose() {
-		$('.lock__try').css({'color' : 'red', 'border-color': 'red'});
-	}
 
 	function init() {
 		let Arr, number, green;
@@ -85,57 +68,192 @@ $(function(){
 		// let green = getRandomInt(number.length); // Запрашиваем у Python случайное число
 	}
 
-	$('.hints__help').on('click', function(){
-		$(this).siblings('.hints__hint').slideToggle();
-		$(this).toggleClass('hints__help_active');
-	});
+	function getNatural(str) {
+		var res = [str.length, []];
+		if (isFinite(str)) {
 
-	$('.main__rules-button').on('click', function(){
-		$('.main__rules').slideToggle();
-		$(this).toggleClass('rules-button__active');
-	});
+			for (var i = 0; i < str.length; i++) {
+
+				res[1].push(Number(str[i]));
+			}
+		}
+		else res = false;
+		return res;
+	}
+
+	function getInteger(str) {
+		var res;
+
+		if (str[0] == '-') {
+		 	res = getNatural(str.slice(1));
+		 	res.unshift(1);
+		} else {
+			res = getNatural(str);
+			res.unshift(0);
+		}
+
+		return res;
+	}
+
+	function answer(id, str) {
+		document.getElementById(id).innerHTML = str;
+	}
+
+	function getStringNat(arr) {
+		var res = '';
+
+		for (var i = 0; i < arr[0]; i++) {
+			res += arr[1][i];
+		}
+
+		return res;
+	} 
+
+	function getStringInt(arr) {
+		res = getStringNat(arr.slice(1));
+		if (arr[0] == 1) res = '-' + res;
+
+		return res;
+	}
+
+	function getRational(str1, str2) {
+		var res;
+
+		res = [getInteger(str1), getNatural(str2)];
+
+		return res;
+	}
+
+	function getStringRational(arr) {
+		var res;
+
+		res = [getStringInt(arr[0]), getStringNat(arr[1])];
+
+		return res;
+	}
+
+	function addPower(str) {
+		var len;
+		var adder;
+		if (str == 'more__1') {
+			len = $('.polynom__1').children('.polynom__inputs').children().length;
+			adder = `
+				<div class="rational_num polynom__input--${len}">
+					<div class="polynom__x">
+						x
+						<span class="x__power">${len}</span>
+					</div>
+					<input type="text" class="num_input">
+					<input type="text" class="num_input">
+				</div>
+			`;
+			$('.polynom__1').children('.polynom__inputs').children().last().after(adder);
+
+
+		} else {
+			len = $('.polynom__2').children('.polynom__inputs').children().length;
+			adder = `
+				<div class="rational_num polynom__input--${len}">
+				<div class="polynom__x">
+					x
+					<span class="x__power">${len}</span>
+				</div>
+					<input type="text" class="num_input">
+					<input type="text" class="num_input">
+				</div>
+			`;
+			$('.polynom__2').children('.polynom__inputs').children().last().after(adder);
+		}
+	}
+
+	function deletePower(str) {
+		var len;
+		if (str == 'less__1') {
+			len = $('.polynom__1').children('.polynom__inputs').children().length;
+
+			if (len > 1) $('.polynom__1').find(`.polynom__input--${len-1}`).remove();
+		} else {
+			len = $('.polynom__2').children('.polynom__inputs').children().length;
+			if (len > 1) $('.polynom__2').find(`.polynom__input--${len-1}`).remove();
+		}
+	}
+
+	function getPolynome(n){
+		var len = $(`.polynom__${n}`).children('.polynom__inputs').children().length;
+		var poly = [len-1, []];
+
+		for (var i = 0; i < len; i++) {
+			str1 = $(`.polynom__${n}`).find(`.polynom__input--${i}`).find('.num_input')[0].value;
+			str2 = $(`.polynom__${n}`).find(`.polynom__input--${i}`).find('.num_input')[1].value;
+			poly[1].push(getRational(str1, str2));
+		}
+
+		return poly;
+	}
+
+	function printPolynome(arr) {
+		var res = '';
+		var coefs = [];
+		var curHTML;
+
+		for (var i = 0; i < arr[1].length; i++) {
+			coefs.push(getStringRational(arr[1][i]));
+		}
+
+		for (var i = 0; i < coefs.length; i++) {
+			curHTML = `
+				<div class="rational_coef">
+							<div class="res_rational-nom">${coefs[i][0]}</div>
+							<div class="res_rational-denom">${coefs[i][1]}</div>
+							<div class="polynom__x">
+								x
+								<span class="x__power">${i}</span>
+							</div>
+						</div>
+			`
+			res += curHTML;
+		}
+
+		$('.polynom_res').html(res);
+
+	}
+
+	$("#P-1").on('click', function() {
+		printPolynome(getPolynome(1));
+		console.log(getPolynome(2));
+	})
 
 	$('.tab').on('click', function(e){
 		e.preventDefault();
 
 		$('.tab').removeClass('tab_active');
-		$('.hints__item').removeClass('hints__item_active');
+		$('.options__item').removeClass('options__item_active');
 
 		$(this).addClass('tab_active');
-		$($(this).attr('href')).addClass('hints__item_active');
+		$($(this).attr('href')).addClass('options__item_active');
 	});
 
 	$('.main__authors').on('click', authors);
 
-	$('.tab:first').click();
+	$('.control__more').on('click', function(e){
+		addPower($(e.target)[0].classList[1]);
+	});
+
+	$('.control__less').on('click', function(e){
+		deletePower($(e.target)[0].classList[1]);
+	});
+
+	$('.tab:last').click();
 
 	$('.popup-container').on('click', function(event){
 		if (event.target == this) {
 			authors();
 		}
 	});
+	console.log(getStringNat(getNatural('98765432')));
+	console.log(getStringInt(getInteger('-123')));
+	console.log(getRational('-12345', '123'));
+	document.getElementById('natural_res').innerHTML = '123';
 
-	$('.lock__try').on('click', trying);
-
-	init();
-
-	$('.main__reset').on('click', init);
 
 });
-
-
-// Получает код от польщователя, сравнивает с правильным паролем [red, green, blue]
-
-//checker(tryRed, tryGreen, tryBlue) сравнивает с [red, green, blue] (ПРОВЕРКА tryColor На число!!!!) Возвращает 1 или true, если все совпало и пользователь угадал
-
-//Генератор случайной подсказки от 100 до 100000 ПРОВЕРКА, ЧТО ХОТЬ ОДНО ЧИСЛО больше 3
-
-//Генератор случайного зеленого числа. Получает подсказку возвращает индекс случайного элемента ПРОВЕРКА НА ТО ЧТО > 3
-
-// init() => вернет случайное число от 100 до 100000 и индекс случайный. запуск игры
-
-//red(hint) => считает количество нулей в записи подсказки в системе счисления, равной количеству цифр в подсказке. Возвращает КРАСНЫЙ пароль
- 
-//green(hint, indx) => берет 23.(01) и переводит из системы == hint[indx] в 10 систему и суммирует первые чертыре знака после запятой. Возвращает ЗЕЛЕНЫЙ пароль
-
-//blue(hint) => переворачивает hint и испольщуя функцию fibonacci(hint) => переводит в систему Фибоначчи, далее считает количество едениц в записи. Возвращает СИНИЙ пароль
